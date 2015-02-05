@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B159DCC1A83BDAF0061B2EA /* UIImage+SpriteAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B159DCB1A83BDAF0061B2EA /* UIImage+SpriteAdditions.m */; };
 		7B8DE1B71A83AE8700A2D4D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DE1B61A83AE8700A2D4D3 /* main.m */; };
 		7B8DE1BA1A83AE8700A2D4D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DE1B91A83AE8700A2D4D3 /* AppDelegate.m */; };
 		7B8DE1BD1A83AE8700A2D4D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DE1BC1A83AE8700A2D4D3 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B159DCA1A83BDAF0061B2EA /* UIImage+SpriteAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SpriteAdditions.h"; path = "../../UIImage+SpriteAdditions.h"; sourceTree = "<group>"; };
+		7B159DCB1A83BDAF0061B2EA /* UIImage+SpriteAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SpriteAdditions.m"; path = "../../UIImage+SpriteAdditions.m"; sourceTree = "<group>"; };
 		7B8DE1B11A83AE8700A2D4D3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8DE1B51A83AE8700A2D4D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8DE1B61A83AE8700A2D4D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B159DCD1A83BDB30061B2EA /* UIImage+SpriteAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				7B159DCA1A83BDAF0061B2EA /* UIImage+SpriteAdditions.h */,
+				7B159DCB1A83BDAF0061B2EA /* UIImage+SpriteAdditions.m */,
+			);
+			name = "UIImage+SpriteAdditions";
+			sourceTree = "<group>";
+		};
 		7B8DE1A81A83AE8700A2D4D3 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8DE1DA1A83AEAA00A2D4D3 /* App delegate */,
+				7B159DCD1A83BDB30061B2EA /* UIImage+SpriteAdditions */,
 				7B8DE1DB1A83AFE500A2D4D3 /* View controller */,
 				7B8DE1BE1A83AE8700A2D4D3 /* Main.storyboard */,
 				7B8DE1C31A83AE8700A2D4D3 /* LaunchScreen.xib */,
@@ -167,6 +180,7 @@
 			files = (
 				7B8DE1BD1A83AE8700A2D4D3 /* ViewController.m in Sources */,
 				7B8DE1BA1A83AE8700A2D4D3 /* AppDelegate.m in Sources */,
+				7B159DCC1A83BDAF0061B2EA /* UIImage+SpriteAdditions.m in Sources */,
 				7B8DE1B71A83AE8700A2D4D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
