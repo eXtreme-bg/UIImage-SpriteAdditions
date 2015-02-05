@@ -21,6 +21,7 @@
 //
 
 #import "ViewController.h"
+#import "UIImage+SpriteAdditions.h"
 
 @interface ViewController () {
     // User interface
@@ -36,7 +37,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // TODO: Set animation properties to animatedImageView
+    // Create the array with sprites from sprite sheet image
+    NSArray *sprites = [[UIImage imageNamed:@"SpriteSheet"] spritesWithSize:CGSizeMake(64.0f, 64.0f)];
+
+    // Set the images
+    animatedImageView.image = [sprites firstObject];
+    animatedImageView.animationImages = sprites;
+
+    // Setup animation
+    animatedImageView.animationImages = sprites;
+    animatedImageView.animationDuration = 1.0f;
+    animatedImageView.animationRepeatCount = 3;
 }
 
 #pragma mark - IB Actions
