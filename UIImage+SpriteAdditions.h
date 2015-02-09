@@ -25,5 +25,6 @@
 @interface UIImage (SpriteAdditions)
 
 - (NSArray *)spritesWithSize:(CGSize)size;
+- (NSArray *)spritesWithSize:(CGSize)size inRange:(NSRange)range;
 
 @end

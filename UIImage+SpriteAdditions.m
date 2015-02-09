@@ -54,4 +54,35 @@
     return [sprites copy];
 }
 
+- (NSArray *)spritesWithSize:(CGSize)size inRange:(NSRange)range {
+    assert(size.width > 0.0f);
+    assert(size.height > 0.0f);
+
+    assert(range.location >= 0);
+    assert(range.length > 0);
+
+    NSMutableArray *sprites = [NSMutableArray array];
+
+    size = CGSizeMake(size.width * kDisplayScaleFactor, size.width * kDisplayScaleFactor);
+
+    CGImageRef spriteSheetRef = self.CGImage;
+
+    CGFloat width = CGImageGetWidth(spriteSheetRef);
+    CGFloat height = CGImageGetHeight(spriteSheetRef);
+
+    // Warning: this doesn't works for iPhone 6+ in zoomed mode
+    assert(size.height == height);
+    assert((int)width % (int)size.width == 0);
+
+    for (NSInteger idx = range.location; idx < range.length; idx++) {
+        CGImageRef spriteRef = CGImageCreateWithImageInRect(spriteSheetRef, CGRectMake(idx * size.width , 0, size.width, size.height));
+
+        [sprites addObject:[UIImage imageWithCGImage:spriteRef scale:kDisplayScaleFactor orientation:UIImageOrientationUp]];
+    }
+
+    assert(sprites.count > 0);
+
+    return [sprites copy];
+}
+
 @end
