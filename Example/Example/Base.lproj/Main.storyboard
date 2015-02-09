@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -59,19 +59,41 @@
                                     <action selector="stopAnimationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1wQ-ui-hIh"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IEQ-pk-og2">
+                                <rect key="frame" x="16" y="459" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="TjV-bD-yVU"/>
+                                    <constraint firstAttribute="height" constant="31" id="fcM-gd-PfV"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load first 5 sprites only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-s8-nnh">
+                                <rect key="frame" x="78" y="464" width="226" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Z31-Is-1tD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rjd-s8-nnh" secondAttribute="trailing" constant="16" id="4CX-U7-xtd"/>
                             <constraint firstItem="XTC-iW-ZFa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6wY-0l-Zxv"/>
+                            <constraint firstItem="IEQ-pk-og2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ayo-tA-iOa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1mm-EP-8Aa" secondAttribute="bottom" constant="20" id="OKG-a5-fhf"/>
+                            <constraint firstItem="1mm-EP-8Aa" firstAttribute="top" secondItem="Rjd-s8-nnh" secondAttribute="bottom" constant="18" id="XfK-nE-2WT"/>
+                            <constraint firstItem="Rjd-s8-nnh" firstAttribute="leading" secondItem="IEQ-pk-og2" secondAttribute="trailing" constant="13" id="ach-6f-6F8"/>
                             <constraint firstItem="G9x-3h-vHr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fyK-21-TEV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G9x-3h-vHr" secondAttribute="bottom" constant="20" id="jY3-4e-X9c"/>
                             <constraint firstAttribute="centerX" secondItem="XTC-iW-ZFa" secondAttribute="centerX" id="vCK-Mr-xLC"/>
                             <constraint firstAttribute="trailing" secondItem="1mm-EP-8Aa" secondAttribute="trailing" constant="16" id="vWB-NK-hmV"/>
+                            <constraint firstItem="G9x-3h-vHr" firstAttribute="top" secondItem="IEQ-pk-og2" secondAttribute="bottom" constant="13" id="xgo-eu-0Wk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="animatedImageView" destination="XTC-iW-ZFa" id="CDp-ai-yEm"/>
+                        <outlet property="loadFirstFiveSpritesSwitch" destination="IEQ-pk-og2" id="Y2W-vR-qBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -26,6 +26,7 @@
 @interface ViewController () {
     // User interface
     __weak IBOutlet UIImageView *animatedImageView;
+    __weak IBOutlet UISwitch *loadFirstFiveSpritesSwitch;
 }
 
 @end
@@ -37,22 +38,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Create the array with sprites from sprite sheet image
-    NSArray *sprites = [[UIImage imageNamed:@"SpriteSheet"] spritesWithSize:CGSizeMake(64.0f, 64.0f)];
-
-    // Set the images
-    animatedImageView.image = [sprites firstObject];
-    animatedImageView.animationImages = sprites;
-
-    // Setup animation
-    animatedImageView.animationImages = sprites;
-    animatedImageView.animationDuration = 1.0f;
-    animatedImageView.animationRepeatCount = 3;
+    [self prepareAnimation];
 }
 
 #pragma mark - IB Actions
 
 - (IBAction)startAnimationButtonPressed:(id)sender {
+    [self prepareAnimation];
+
     if (animatedImageView.isAnimating) {
         return;
     }
@@ -66,6 +59,27 @@
     }
 
     [animatedImageView stopAnimating];
+}
+
+#pragma mark - Misc.
+
+- (void)prepareAnimation {
+    // Create the array with sprites from sprite sheet image
+    NSArray *sprites;
+    if (loadFirstFiveSpritesSwitch.on) {
+        sprites = [[UIImage imageNamed:@"SpriteSheet"] spritesWithSize:CGSizeMake(64.0f, 64.0f) inRange:NSMakeRange(0, 5)];
+    } else {
+        sprites = [[UIImage imageNamed:@"SpriteSheet"] spritesWithSize:CGSizeMake(64.0f, 64.0f)];
+    }
+
+    // Set the images
+    animatedImageView.image = [sprites firstObject];
+    animatedImageView.animationImages = sprites;
+
+    // Setup animation
+    animatedImageView.animationImages = sprites;
+    animatedImageView.animationDuration = 1.0f;
+    animatedImageView.animationRepeatCount = 3;
 }
 
 @end
