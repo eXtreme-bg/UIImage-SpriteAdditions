@@ -27,8 +27,8 @@
 @implementation UIImage (SpriteAdditions)
 
 - (NSArray *)spritesWithSize:(CGSize)size {
-    assert(self);
-    assert(!CGSizeEqualToSize(size, CGSizeZero));
+    assert(size.width > 0.0f);
+    assert(size.height > 0.0f);
 
     NSMutableArray *sprites = [NSMutableArray array];
 
