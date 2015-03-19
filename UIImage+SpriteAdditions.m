@@ -63,7 +63,7 @@
 
     NSMutableArray *sprites = [NSMutableArray array];
 
-    size = CGSizeMake(size.width * kDisplayScaleFactor, size.width * kDisplayScaleFactor);
+    size = CGSizeMake(size.width * kDisplayScaleFactor, size.height * kDisplayScaleFactor);
 
     CGImageRef spriteSheetRef = self.CGImage;
 
