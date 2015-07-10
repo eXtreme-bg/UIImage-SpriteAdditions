@@ -35,8 +35,10 @@
     size = CGSizeMake(size.width * kDisplayScaleFactor, size.width * kDisplayScaleFactor);
 
     // Workaround for iPhone 6+ in zoomed mode
-    if ([UIScreen mainScreen].nativeScale == 3.0f && [UIScreen mainScreen].scale == 2.0f) {
-        size = CGSizeMake(size.width * 1.5f, size.width * 1.5f);
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]) {
+        if ([UIScreen mainScreen].nativeScale > 2.0f && [UIScreen mainScreen].nativeScale <= 3.0f && [UIScreen mainScreen].scale == 2.0f) {
+            size = CGSizeMake(size.width * 1.5f, size.width * 1.5f);
+        }
     }
 
     CGImageRef spriteSheetRef = self.CGImage;
@@ -70,8 +72,10 @@
     size = CGSizeMake(size.width * kDisplayScaleFactor, size.height * kDisplayScaleFactor);
 
     // Workaround for iPhone 6+ in zoomed mode
-    if ([UIScreen mainScreen].nativeScale == 3.0f && [UIScreen mainScreen].scale == 2.0f) {
-        size = CGSizeMake(size.width * 1.5f, size.width * 1.5f);
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]) {
+        if ([UIScreen mainScreen].nativeScale > 2.0f && [UIScreen mainScreen].nativeScale <= 3.0f && [UIScreen mainScreen].scale == 2.0f) {
+            size = CGSizeMake(size.width * 1.5f, size.width * 1.5f);
+        }
     }
 
     CGImageRef spriteSheetRef = self.CGImage;
